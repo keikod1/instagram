@@ -10,41 +10,38 @@ import UIKit
 import SnapKit
 
 class PublicCell: UICollectionViewCell {
-    lazy var publicPhoto: UIImageView = {
+   private lazy var publicPhoto: UIImageView = {
         let view = UIImageView()
         view.image = .actions
         return view
     }()
-    lazy var profilePhoto: UIImageView = {
+    private lazy var profilePhoto: UIImageView = {
         let view = UIImageView()
         view.image = .checkmark
         view.layer.cornerRadius =  (frame.height + frame.width) / 48
         view.clipsToBounds = true
         return view
     }()
-    lazy var publicName: UILabel = {
+    private lazy var publicName: UILabel = {
         let view = UILabel()
         view.text = "uerhfierj"
         view.textColor = .white
         return view
     }()
-    private lazy var action: UIButton = {
+   private lazy var action: UIButton = {
         let view = UIButton()
         view.setImage(UIImage(systemName:  "ellipsis"), for: .normal)
         view.tintColor = .white
         return view
     }()
-    
- 
-    
-    lazy var touchPublicCell: UIStackView = {
+    private lazy var touchPublicCell: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
         view.backgroundColor = .black
         view.distribution = .fillProportionally
         return view
     }()
-    lazy var likeButton: UIButton = {
+    private lazy var likeButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .black
         view.setImage(UIImage(systemName: "suit.heart"), for: .normal)
@@ -52,21 +49,21 @@ class PublicCell: UICollectionViewCell {
         view.addTarget(self, action: #selector(clickLike(view:)), for: .touchUpInside)
         return view
     }()
-    lazy var messageButton: UIButton = {
+    private lazy var messageButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .black
         view.setImage(UIImage(systemName: "message"), for: .normal)
         view.tintColor = .white
         return view
     }()
-    lazy var shareButton: UIButton = {
+    private lazy var shareButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .black
         view.setImage(UIImage(systemName: "paperplane"), for: .normal)
         view.tintColor = .white
         return view
     }()
-    lazy var saveButton: UIButton = {
+    private lazy var saveButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .black
         view.setImage(UIImage(systemName: "bookmark"), for: .normal)
@@ -104,7 +101,7 @@ class PublicCell: UICollectionViewCell {
             make.height.equalTo(frame.height / 12)
             make.width.equalTo(frame.height / 12)
         }
-        addSubview(publicName)
+        addSubview(publicName) 
         publicName.snp.makeConstraints { make in
             make.centerY.equalTo(profilePhoto)
             make.left.equalTo(profilePhoto.snp.right).offset(10)

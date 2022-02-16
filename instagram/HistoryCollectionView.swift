@@ -22,10 +22,8 @@ class HistoryCollectionView: UICollectionViewCell, UICollectionViewDelegate, UIC
                                            InstagramModel(publicPhoto: "torvald", profilePhoto: "torvald", publicName: "torvalds_linus"),
                                            
       ]
-    
-    static let identifier = "HistoryCollectionView"
-    
-    let storyCollectionView: UICollectionView = {
+     
+    private lazy var storyCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -33,15 +31,16 @@ class HistoryCollectionView: UICollectionViewCell, UICollectionViewDelegate, UIC
         view.clipsToBounds = true
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .black
+        view.dataSource = self
+        view.delegate = self  
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        storyCollectionView.delegate = self
-        storyCollectionView.dataSource = self
+
+    override func layoutSubviews() {
         setupSubViews()
         setupCollectionView()
+
     }
     func setupSubViews(){
            addSubview(storyCollectionView)
@@ -69,7 +68,5 @@ class HistoryCollectionView: UICollectionViewCell, UICollectionViewDelegate, UIC
            return CGSize(width: frame.height - 10, height: frame.height - 10)
        }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
 }
