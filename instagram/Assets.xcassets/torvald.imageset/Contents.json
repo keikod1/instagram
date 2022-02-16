@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "640px-Linus_Torvalds_2002_Australian_Linux_conference.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "640px-Linus_Torvalds_2002_Australian_Linux_conference-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "640px-Linus_Torvalds_2002_Australian_Linux_conference-2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
